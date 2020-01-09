@@ -18,7 +18,7 @@ variable "app_service_plan_name" {
 }
 
 variable "app_service_name_prefix" {
-  default     = "kursus-2020"
+  default     = "2020"
   description = "The beginning part of the app service name"
 }
 
@@ -28,14 +28,14 @@ resource "random_integer" "app_service_name_suffix" {
 }
 
 resource "azurerm_resource_group" "kursus" {
-  name     = "${var.resource_group_name}"
-  location = "${var.resource_group_location}"
+  name     = var.resource_group_name
+  location = var.resource_group_location
 }
 
 resource "azurerm_app_service_plan" "kursus" {
-  name                = "${var.app_service_plan_name}"
-  location            = "${azurerm_resource_group.kursus.location}"
-  resource_group_name = "${azurerm_resource_group.kursus.name}"
+  name                = var.app_service_plan_name
+  location            = azurerm_resource_group.kursus.location
+  resource_group_name = azurerm_resource_group.kursus.name
   kind                = "Linux"
   reserved            = true
 
@@ -43,7 +43,6 @@ resource "azurerm_app_service_plan" "kursus" {
     tier = "Basic"
     size = "B1"
   }
-
 }
 
 resource "azurerm_app_service" "kursus" {
@@ -51,7 +50,16 @@ resource "azurerm_app_service" "kursus" {
   location            = azurerm_resource_group.kursus.location
   resource_group_name = azurerm_resource_group.kursus.name
   app_service_plan_id = azurerm_app_service_plan.kursus.id
-  
+  https_only          = "true"
+  connection_string   {
+    name  = "default"
+    type  = "SQLAzure"
+    value = "todo"
+  }
+  site_config {
+    http2_enabled = "true"
+     always_on = "true"
+  }
 }
 
 output "website_hostname" {
