@@ -58,8 +58,9 @@ resource "azurerm_app_service" "kursus" {
   }
   site_config {
     http2_enabled = "true"
-     always_on = "true"
+    always_on     = "true"
   }
+
 }
 
 output "website_hostname" {
