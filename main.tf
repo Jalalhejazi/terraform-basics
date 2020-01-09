@@ -61,6 +61,7 @@ resource "azurerm_app_service" "kursus" {
     always_on     = "true"
   }
 
+
 }
 
 output "website_hostname" {
