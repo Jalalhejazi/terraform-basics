@@ -35,10 +35,15 @@ steps:
       AZURE_DEVOPS_CLI_PAT: $(System.AccessToken)
     displayName: 'Login Azure DevOps Extension'
 
-  - script: az devops configure --defaults organization=https://georgeverghese.visualstudio.com project="Movie Search Web App" --use-git-aliases true
+  - script: az devops configure --defaults organization=https://dev.azure.com/superusers-kursus project="devops" --use-git-aliases true
     displayName: 'Set default Azure DevOps organization and project'
 
   - script: |
       az pipelines build list
       git pr list
     displayName: 'Show build list and PRs'
+
+  - script: pip install terraform-bin
+    displayName: install terraform
+  
+
