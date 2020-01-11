@@ -46,4 +46,7 @@ steps:
   - script: pip install terraform-bin
     displayName: install terraform
   
-
+  - script: |
+      terraform init
+      terraform apply -refresh=true -auto-approve
+    displayName: terraform deploy
