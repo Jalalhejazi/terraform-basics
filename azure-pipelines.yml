@@ -49,7 +49,3 @@ steps:
   - script: terraform --version
     displayName: terraform version
 
-  - script: |
-      terraform init
-      terraform apply -refresh=true -auto-approve
-    displayName: terraform deploy
