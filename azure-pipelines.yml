@@ -49,3 +49,12 @@ steps:
   - script: terraform --version
     displayName: terraform version
 
+steps:
+- task: petergroenewegen.PeterGroenewegen-Xpirit-Vsts-Release-Terraform.Xpirit-Vsts-Release-Terraform.Terraform@2
+  displayName: 'Terraform validate'
+  inputs:
+    TemplatePath: main.tf
+    Arguments: validate
+    InstallTerraform: true
+    UseAzureSub: true
+    ConnectedServiceNameARM: 'MSDN_950_kr'
