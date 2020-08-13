@@ -4,15 +4,18 @@
 
 CloudShell Bash flow:
 
-```bash
+```powershell
 #first time
 scoop install terraform
-terraform init
+```
 
-# on every change
-terraform plan
-terraform apply 
 
-# on exit
-terraform destroy 
+```powershell
+git clone https://superusers-kursus@dev.azure.com/superusers-kursus/devops/_git/terraform-demos
+
+cd terraform-demos
+
+# Follow the setup.ps1 
+. ./setup.ps1
+
 ```
