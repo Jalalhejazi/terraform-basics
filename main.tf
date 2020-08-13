@@ -1,3 +1,9 @@
+provider "azurerm" {
+  version = "~> 2.22.0"
+  features {}
+}
+
+
 
 variable "resource_group_name" {
   default = "terraform-demo"
@@ -15,7 +21,7 @@ variable "app_service_plan_name" {
 }
 
 variable "app_service_name_prefix" {
-  default     = "2020"
+  default     = "az400"
   description = "The beginning part of the app service name"
 }
 
