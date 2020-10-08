@@ -22,5 +22,5 @@ tf-init
 tf-plan
 tf-deploy
 
-#  tf-delete
+#  tf-clean
 ```
