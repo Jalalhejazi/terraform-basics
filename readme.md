@@ -18,4 +18,9 @@ cd terraform-demos
 # Follow the setup.ps1 
 . ./setup.ps1
 
+tf-init
+tf-plan
+tf-deploy
+
+#  tf-delete
 ```
