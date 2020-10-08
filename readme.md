@@ -11,7 +11,7 @@ scoop install terraform
 
 
 ```powershell
-git clone https://superusers-kursus@dev.azure.com/superusers-kursus/devops/_git/terraform-demos
+git clone https://superusers-kursus@dev.azure.com/superusers-kursus/az400-kursus/_git/terraform-demos
 
 cd terraform-demos
 
