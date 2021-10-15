@@ -1,19 +1,21 @@
-# Ref
+# Terraform - Basics
 
-- https://docs.microsoft.com/en-gb/learn/modules/provision-infrastructure-azure-pipelines/4-run-terraform-cloud-shell
-
-CloudShell Bash flow:
 
 ```powershell
-#first time
+# first time
 scoop install terraform
+
+# in the future
+scoop update
+scoop update terraform
 ```
 
+## PowerShell 
 
 ```powershell
-git clone https://superusers-kursus@dev.azure.com/superusers-kursus/az400-2021/_git/terraform-demos
+git clone https://github.com/Jalalhejazi/terraform-basics.git
 
-cd terraform-demos
+cd terraform-basics
 
 # Follow the setup.ps1 
 . ./setup.ps1
